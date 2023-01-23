@@ -6,64 +6,139 @@
             .siteNav {
                 text-align: center;
                 width:100%;
+                margin:20px;
+
             }
             #TitleBar {
                 font-family:'Times New Roman', Times, serif;
-                font-size:16px;
+                font-size:18px;
             }
             body {
                 background-color: cornflowerblue;
             }
             .drop {
                 display:inline-block;
-                border:2px solid black;
                 padding:5px;
-                width:23.59%;
+                width:23.65%;
+                height:50px;
                 margin:none;
+                outline:solid 3px goldenrod;
             }
-
-
-
+            .content {
+                display:none;
+                width:23.65%;
+                overflow: auto;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                position:absolute;
+                z-index: top;
+            }
+            .drop:hover .content {
+                display:block;
+                background-color:darkred;
+                color:aliceblue;
+            }
+            .drop a{
+                display:block;
+                padding:5px;
+            }
+            .content a:hover{
+                background-color:brown;/*for dropdowns*/
+            }
+            .drop:hover{
+                background-color:darkcyan;
+            }
+            body {
+                margin-left: 3px;
+                margin-right: 0px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            main .panel{
+                display:inline-block; 
+                width:49%;}
+            .status{
+                display:block;
+            }
+            nav{
+                position:sticky;
+            }
+            main div{z-index: 0; }
+            .personalTouch{
+                text-align:center;
+                width:100%;
+            }
+            #guide {
+                position:relative;
+            }
+            .product{color:rgb(240, 15, 139);}/*for links in content*/
+            .product:hover{color:rgb(244, 102, 249);}/*for links in content*/
+            code{color:white;}
+            i{color:darkgreen;}
         </style>
     </head>
     <body>
-
-        <div class="siteNav"><a id="TitleBar" class="siteNav">Welcome to the NEXUS! Home to SlartBart's Html projects</a></div>
         <nav>
+            <div class="siteNav"><a id="TitleBar" class="siteNav">Welcome to the NEXUS! Home to SlartBart's Html projects</a></div>
+
             <div class="drop">
                 <a>Html intensive</a>
-                <div>
-                    <a></a>
-                    <a></a>
-                    <a></a>
+                <div class="content">
+                    <a>coming soon!</a>
+                    <a>coming soon!</a>
+                    <a>coming soon!</a>
                 </div>
             </div>
             <div class="drop">
                 <a>CSS intensive</a>
-                <div>
-                    <a></a>
-                    <a></a>
-                    <a></a>
+                <div class="content">
+                    <a>coming soon!</a>
+                    <a>coming soon!</a>
+                    <a>coming soon!</a>
                 </div>
             </div>
             <div class="drop">
                 <a>JS intensive</a>
-                <div>
-                    <a></a>
-                    <a></a>
-                    <a></a>
+                <div class="content">
+                    <a>coming soon!</a>
+                    <a>coming soon!</a>
+                    <a>coming soon!</a>
                 </div>
             </div>
             <div class="drop">
                 <a>C intensive</a>
-                <div>
-                    <a></a>
-                    <a></a>
-                    <a></a>
+                <div class="content">
+                    <a>coming soon!</a>
+                    <a>coming soon!</a>
+                    <a>coming soon!</a>
                 </div>
             </div>
         </nav>
+        <main>
+            <div id="guide" class="panel">
+                <h3>Here's how to use this website!</h3>
+                <p>Links in the top go to projects and repositories of coding knowledge. I do coding in JS, HTML, C, and CSS. Each site will still have the links posted above, so you can move throughout the site with ease.</p>
+                <p>Repositories contain useful techniques for every kind of programmer, the website developer to the C programmer.</p>
+                <p>Projects apply the techniques gone over, or give useful applications for easy access.</p>
+                <p>keywords and programming is marked in <code>coded text</code>. Names will be marked in <i>italics</i>, and repositories will go over each part step by step. The joke of the week may be updated less than frequently, but weekend updates will always take place on monday. </p>
+                <p>If I find anything of special note, this website may grow to also contain woodworking projects and cooking recipies. </p>
+                <p>No real target market here, just a guy trying to build a website!</p>
+            </div>
+            <div class="panel">
+                
+                <div id="developing" class="status">
+                    <h3>Currently under Development:<a class="product">SortOfAnApp</a></h3>
+                    <p class="description">A JS intensive webpage, <a class="product" href="SortOfAnApp/SortOfAnApp.html">SortOfAnApp</a> uses bubble-sorting techniques to collect and sort a list of items, ranging from one to two linked values. This means that it can handle single item lists, and item and quantity lists, and is expected to display the current items, and them after sorting. This should help shopping trips, spelling sesions, stat analysis, and anything else needing sorting. <br><br> Expected publish date: 1/30/2023</p>
+                </div>
+                <div id="weeklyUpdates" class="status">
+                    <h3>Here are the weekly updates:</h3>
+                    <p>This week the site is starting up for the first time, and work begins on our first project: <a class="product">SortOfAnApp</a>. Consideration begins on wether to begin documenting useful css techniques. </p>
+                    <p class="personalTouch">Weekly joke: <br>There are 10 types of people in this world. Those who understand binary, and those who don't.</p>
+                    <p class="personalTouch">Weekend projects: <br>Worked on carving miniatures with my sister.</p>
+                </div>
+            </div>
+            
 
+        </main>
 
 
 
