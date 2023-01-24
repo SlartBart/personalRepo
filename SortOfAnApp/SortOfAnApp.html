@@ -24,13 +24,13 @@
     <option value="nameA">Sort by name</option>
     </optgroup>
   </select><br><br>
-  <input type="text" placeholder="" id="textIn"><br>
+  <input type="text" placeholder="" id="textIn"required ><br>
   <input type="number" placeholder="" id="numIn">
   <br><br>
   <button onclick="addElement()">Add entry</button><br><br>
   <button onclick="">Sort list</button><br><br>
   <button onclick="">Change element:</button><input type="number" id="pos" placeholder="element #"><br><br>
-  <button onclick="">Clear list</button><br><br>
+  <button onclick="clearlist()">Clear list</button><br><br>
   <button onclick="showData()">Display list</button>
   <p id="displayArea">list:</p>
   <script>
@@ -49,7 +49,6 @@
       document.getElementById("textIn").value=null;
       cnt++;
     };
-
     function fixDisplay()
     {
       if(document.getElementById("list").value==="Quantity"||document.getElementById("list").value==="nameA")
@@ -61,8 +60,10 @@
       document.getElementById("numIn").style.display="none";
       multi = false;
       }
-      list1=null;
-      list2=null;
+      list1.length=0;
+      list2.length=0;
+      cnt=0;
+      
     };
     function showData()
     {
@@ -78,18 +79,13 @@
       }
       document.getElementById("displayArea").innerHTML="list: "+output;
     };
-
-
-
-
-
-
-
-
-
-
-
-
+    function clearlist()
+    {
+      list1.length=0;
+      list2.length=0;
+      cnt=0;
+      document.getElementById("displayArea").innerHTML="list: ";
+    }
   </script>
 </body>
 </html>
