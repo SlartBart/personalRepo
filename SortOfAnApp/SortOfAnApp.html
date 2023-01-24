@@ -2,11 +2,17 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <style>
+        #numIn{
+          display:none;
+        }
+        </style>
   <title>Sort Of An App</title>
 </head>
 <body>
-  <p>Welcome to ListSort, your personal sorting application.<br> What do you want to do today?</p>
-  <select id="list" required>
+  <p>Welcome to ListSort, your personal sorting application.<br>
+     What do you want to do today?</p>
+  <select id="list" required onclick="fixDisplay()">
     <optgroup label="One type lists">
       <option value="A-Z">A-Z sort</option>
       <option value="Z-A">Z-A sort</option>
@@ -15,13 +21,75 @@
     </optgroup>
     <optgroup label="Name and quantity lists">
     <option value="Quantity">Sort by quantity</option>
-    <option value="nameA">Sort by name
+    <option value="nameA">Sort by name</option>
     </optgroup>
   </select><br><br>
   <input type="text" placeholder="" id="textIn"><br>
   <input type="number" placeholder="" id="numIn">
   <br><br>
-  <button onclick="">Add entry</button><br><br>
-  <button onclick="">Sort list</button>
+  <button onclick="addElement()">Add entry</button><br><br>
+  <button onclick="">Sort list</button><br><br>
+  <button onclick="">Change element:</button><input type="number" id="pos" placeholder="element #"><br><br>
+  <button onclick="">Clear list</button><br><br>
+  <button onclick="showData()">Display list</button>
+  <p id="displayArea">list:</p>
+  <script>
+    var list1=[];
+    var list2=[];
+    var multi = false;
+    var cnt=0;
+    function addElement()
+    {
+      list1[cnt]=document.getElementById("textIn").value;
+      if(multi)
+      {
+        list2[cnt]=document.getElementById("numIn").value;
+        document.getElementById("numIn").value=null;
+      }
+      document.getElementById("textIn").value=null;
+      cnt++;
+    };
+
+    function fixDisplay()
+    {
+      if(document.getElementById("list").value==="Quantity"||document.getElementById("list").value==="nameA")
+      {
+        document.getElementById("numIn").style.display="block";
+        multi = true;
+      }
+      else{
+      document.getElementById("numIn").style.display="none";
+      multi = false;
+      }
+      list1=null;
+      list2=null;
+    };
+    function showData()
+    {
+      var output='';
+      for(var i = 0; i<list1.length; i++)
+      {
+        output+=(i+1)+": "+list1[i];
+        if(multi)
+        {
+          output+=", "+list2[i];
+        }
+        output+=";  ";
+      }
+      document.getElementById("displayArea").innerHTML="list: "+output;
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
 </body>
 </html>
