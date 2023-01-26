@@ -29,7 +29,7 @@
   <br><br>
   <button onclick="addElement()">Add entry</button><br><br>
   <button onclick="">Sort list</button><br><br>
-  <button onclick="">Change element:</button><input type="number" id="pos" placeholder="element #"><br><br>
+  <button onclick="pinpoint()">Change element:</button><input type="number" id="position" placeholder="element #"><br><br>
   <button onclick="clearlist()">Clear list</button><br><br>
   <button onclick="showData()">Display list</button>
   <p id="displayArea">list:</p>
@@ -85,6 +85,28 @@
       list2.length=0;
       cnt=0;
       document.getElementById("displayArea").innerHTML="list: ";
+    }
+    function pinpoint()
+    {
+      if(document.getElementById("textIn").value<="")
+      {
+        document.getElementById("textIn").value=list1[document.getElementById("position").value-1];
+        if(multi)
+        {
+          document.getElementById("numIn").value=list2[document.getElementById("position").value-1];
+        }
+      }
+      else
+      {
+        list1[document.getElementById("position").value-1]=document.getElementById('textIn').value;
+        if(multi)
+        {
+          list2[document.getElementById("position").value-1]=document.getElementById('numIn').value;
+          document.getElementById('numIn').value='';
+        }
+        document.getElementById('textIn').value="";
+        document.getElementById('position').value='';
+      }
     }
   </script>
 </body>
