@@ -28,7 +28,7 @@
   <input type="number" placeholder="" id="numIn">
   <br><br>
   <button onclick="addElement()">Add entry</button><br><br>
-  <button onclick="">Sort list</button><br><br>
+  <button onclick="sorting()">Sort list</button><br><br>
   <button onclick="pinpoint()">Change element:</button><input type="number" id="position" placeholder="element #"><br><br>
   <button onclick="clearlist()">Clear list</button><br><br>
   <button onclick="showData()">Display list</button>
@@ -106,6 +106,129 @@
         }
         document.getElementById('textIn').value="";
         document.getElementById('position').value='';
+      }
+    }
+    function sorting()
+    {
+      var type=document.getElementById("list").value;
+      if(type==="A-Z")
+      {
+        for(var i = 0; i<list1.length-1; i++)
+        {
+          for(var x = i; x<list1.length; x++)
+          {
+            if(list1[x]<list1[i])
+            {
+              var temp = list1[x];
+              list1[x]=list1[i];
+              list1[i]=temp;
+            }
+            if(list1[x].length<list1[i].length)
+            {
+              var temp = list1[x];
+              list1[x]=list1[i];
+              list1[i]=temp;
+            }
+          }
+        }
+      }
+      else if(type==="Z-A")
+      {
+        for(var i = 0; i<list1.length-1; i++)
+        {
+          for(var x = i; x<list1.length; x++)
+          {
+            if(list1[x]>list1[i])
+            {
+              var temp = list1[x];
+              list1[x]=list1[i];
+              list1[i]=temp;
+            }
+            if(list1[x].length>list1[i].length)
+            {
+              var temp = list1[x];
+              list1[x]=list1[i];
+              list1[i]=temp;
+            }
+          }
+        }
+      }
+      else if(type==="long")
+      {
+        for(var i = 0; i<list1.length-1; i++)
+        {
+          for(var x = i; x<list1.length; x++)
+          {
+            if(list1[x].length>list1[i].length)
+            {
+              var temp = list1[x];
+              list1[x]=list1[i];
+              list1[i]=temp;
+            }
+          }
+        }
+      }
+      else if(type==="short")
+      {
+        for(var i = 0; i<list1.length-1; i++)
+        {
+          for(var x = i; x<list1.length; x++)
+          {
+            if(list1[x].length<list1[i].length)
+            {
+              var temp = list1[x];
+              list1[x]=list1[i];
+              list1[i]=temp;
+            }
+          }
+        }
+      }
+      else if(type==="Quantity")
+      {
+        for(var i = 0; i<list2.length-1; i++)
+        {
+          for(var x = i; x<list2.length; x++)
+          {
+            
+            if(list2[x]<list2[i])
+            {
+              var temp1 = list1[x];
+              list1[x]=list1[i];
+              list1[i]=temp1;
+              var temp2 = list2[x];
+              list2[x]=list2[i];
+              list2[i]=temp2;
+            }
+            if(list2[x].length<list2[i].length)
+            {
+              var temp1 = list1[x];
+              list1[x]=list1[i];
+              list1[i]=temp1;
+              var temp2 = list2[x];
+              list2[x]=list2[i];
+              list2[i]=temp2;
+            }
+          }
+        }
+      }
+      else
+      {
+        for(var i = 0; i<list2.length-1; i++)
+        {
+          for(var x = i; x<list2.length; x++)
+          {
+            
+            if(list1[x]<list1[i])
+            {
+              var temp1 = list1[x];
+              list1[x]=list1[i];
+              list1[i]=temp1;
+              var temp2 = list2[x];
+              list2[x]=list2[i];
+              list2[i]=temp2;
+            }
+          }
+        }
       }
     }
   </script>
