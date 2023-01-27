@@ -1,15 +1,108 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <style>
-        #numIn{
-          display:none;
-        }
-        </style>
+    <meta charset="utf-8">
+    <style>
+       #numIn{
+        display:none;
+      }
+      .siteNav {
+        text-align: center;
+        width:100%;
+        margin:20px;
+      }
+      #TitleBar {
+        font-family:'Times New Roman', Times, serif;
+        font-size:18px;
+      }
+      body {
+        background-color: cornflowerblue;
+      }
+      .drop {
+        display:inline-block;
+        padding:5px;
+        width:23.65%;
+        height:50px;
+        margin:none;
+        outline:solid 3px goldenrod;
+      }
+      .content {
+        display:none;
+        width:23.65%;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,.5);
+        position:absolute;          
+      }
+      .drop:hover .content {
+        display:block;
+        background-color:darkred;
+        color:aliceblue;
+      }
+      .drop a{
+        display:block;
+        padding:5px;
+      }
+      .content a:hover{
+        background-color:brown;/*for dropdowns*/
+      }
+      .drop:hover{
+        background-color:darkcyan;
+      }
+      a[href]{
+        color:rgb(240, 15, 139);
+      }/*for links in content*/
+      a[href]:hover{
+        color:rgb(244, 102, 249);
+      }
+      .siteNav{
+        font-family:'Times New Roman', Times, serif;
+        font-size:18px;
+        background:linear-gradient(to right, rgb(56, 244, 75) 0%, rgb(144, 195, 240) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight:bold;
+      }
+    </style>
   <title>Sort Of An App</title>
 </head>
+
 <body>
+  <nav>
+  <div class="siteNav"><a id="TitleBar" class="siteNav"href="index.html">Welcome to the NEXUS! Home to SlartBart's Html projects</a></div>
+
+    <div class="drop">
+        <a>Html intensive</a>
+        <div class="content">
+            <a>coming soon!</a>
+            <a>coming soon!</a>
+            <a>coming soon!</a>
+        </div>
+    </div>
+    <div class="drop">
+        <a>CSS intensive</a>
+        <div class="content">
+            <a>coming soon!</a>
+            <a>coming soon!</a>
+            <a>coming soon!</a>
+        </div>
+    </div>
+    <div class="drop">
+        <a>JS intensive</a>
+        <div class="content">
+            <a href="SortOfAnApp.html">SortOfAnApp</a>
+            <a>coming soon!</a>
+            <a>coming soon!</a>
+        </div>
+    </div>
+    <div class="drop">
+        <a>C intensive</a>
+        <div class="content">
+            <a>coming soon!</a>
+            <a>coming soon!</a>
+            <a>coming soon!</a>
+        </div>
+    </div>
+  </nav>
   <p>Welcome to ListSort, your personal sorting application.<br>
      What do you want to do today?</p>
   <select id="list" required onclick="fixDisplay()">
