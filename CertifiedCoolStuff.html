@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Project Nexus</title>
+        <title>CertifiedCoolStuff</title>
         <style>
             .siteNav {
                 text-align: center;
@@ -52,44 +52,37 @@
             nav{
                 position:sticky;
             }
-            main .panel{
-                display:inline-block; 
-                width:49%;}
-            .status{
-                display:block;
-            }
-            
-            main div{z-index: 0; }
-            .personalTouch{
-                text-align:center;
-                width:100%;
-            }
-            #guide {
-                position:relative;
-                z-index: -1;
-            }
             a[href]{
                 color:rgb(240, 15, 139);
             }/*for links in content*/
             a[href]:hover{
                 color:rgb(244, 102, 249);
             }/*for links in content*/
-            code{
-                color:white;
+            #upper{
+                background-color:red;
+                width:200px;
             }
-            i{
-                color:darkgreen;
+            #lower{
+                background-color:blue;
+                display:none;
+                position:absolute;
             }
-            h3{
-                text-align:center
+            #upper:hover #lower
+            {
+                display:block;
             }
-            
+            .sourcecode{
+                color:aliceblue;
+                background-color:black;
+                border-radius:9px;
+                font-family:monospace;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, .5);
+            }
         </style>
     </head>
     <body>
         <nav>
             <div class="siteNav"><a id="TitleBar" class="siteNav" href="index.html">Welcome to the NEXUS! Home to SlartBart's Html projects</a></div>
-
             <div class="drop">
                 <a>Html intensive</a>
                 <div class="content">
@@ -101,7 +94,7 @@
             <div class="drop">
                 <a>CSS intensive</a>
                 <div class="content">
-                    <a>coming soon!</a>
+                    <a href="CertifiedCoolStuff.html">coming soon!</a>
                     <a>coming soon!</a>
                     <a>coming soon!</a>
                 </div>
@@ -124,27 +117,51 @@
             </div>
         </nav>
         <main>
-            <div id="guide" class="panel">
-                <h3>Here's how to use this website!</h3>
-                <p>Links in the top go to projects and repositories of coding knowledge. I do coding in JS, HTML, C, and CSS. Each site will still have the links posted above, so you can move throughout the site with ease.</p>
-                <p>Repositories contain useful techniques for every kind of programmer, the website developer to the C programmer.</p>
-                <p>Projects apply the techniques gone over, or give useful applications for easy access.</p>
-                <p>Keywords and programming are marked in <code>coded text</code>. Names will be marked in <i>italics</i>, and repositories will go over each part step by step. The joke of the week may be updated less than frequently, but weekend updates will always take place on Monday. Click on the top to return home!</p>
-                <p>If I find anything of special note, this website may grow to also contain woodworking projects and cooking recipies. </p>
-                <p>No real target market here, just a guy trying to build a website!</p>
-            </div>
-            <div class="panel">
-                
-                <div id="developing" class="status">
-                    <h3>Developing:<a href="CertifiedCoolStuff.html">CertifiedCoolStuff</a></h3>
-                    <p class="description">A CSS intensive and instructive webpage, CertifiedCoolStuff will instruct users on how I made certain aspects of my website, like drop-down menus, and color gradients. This will be updated over time, to include other amazing aspects of CSS coding. Expected publish date: </p>
+            <p>Does your static, albeit, colorful, webpage not look good to you anymore> Are you itching for Dynamic elements? Are you infurirated in your inability to make pleasing selection screens? Look no further than Certified Cool Stuff, where your CSS dreams become reality.</p>
+            <p>Look here for quick-links to CSS projects!:
+                <ul>
+                    <li>drop-down design!</li>
+                    <li>color gradients</li>
+                    <li>making very simple images using divs</li>
+                </ul>
+            </p>
+            <br><br><br>
+            <div>
+                <h2>Making a drop down selection menu for links or other content!</h2>
+                <p>Need something to drop down when necessary? Use this technique!</p>
+                <p>Requirements: a parent and child element. Example below:</p>
+                <div id="upper">
+                    <a>Look at me mom!</a>
+                    <div id="lower">
+                        <a>I see you kiddo!<br>hello<br>hello</a>
+                    </div>
                 </div>
-                <div id="weeklyUpdates" class="status">
-                    <h3>Here are the weekly updates:</h3>
-                    <p>Consideration done! Cool CSS techniques can be referenced in <a href='CertifiedCoolStuff.html'>CertifiedCoolStuff</a> for outside users. Will likely be updated over time to include more CSS techniques to make your webpage shine!</p>
-                    <p class="personalTouch">Weekly joke: When does a joke become a dad joke? <br> When it becomes apparent</p>
-                    <p class="personalTouch">Weekend projects: <br>Bush-crafted a fence, and worked on crafting a miniature bedroom with sister.</p>
-                </div>
+
+
+                <p class="sourcecode">
+                    &lt;div id="upper"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;a&gt;insert text&lt;/a&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="lower"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&gt;insert text&lt;/a&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                    &lt;/div&gt;<br>
+                    <p>With the following css to make the bottom element appear after everything:</p>
+                    <p class="sourcecode">
+                        #upper{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;width:200px;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;color:/any/;<br>
+                        }<br>
+                        #lower{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;display:none;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;color:/not upper's/;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;position:absolute;<br>
+                        }<br>
+                        #upper:hover #lower{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;display:block;
+                        }
+                        <p>#upper and #lower can be substituted for any class or id, as long as there are nested divs. </p>
+                    </p>
+                </p>
             </div>
         </main>
     </body>
