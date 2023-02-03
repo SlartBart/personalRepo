@@ -78,6 +78,44 @@
                 font-family:monospace;
                 box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, .5);
             }
+
+            /*animation*/
+            @keyframes colorshift{
+                0%{right:0%;}
+                100%{right:200%;}
+                
+            }
+            #strip{
+                height:200px;
+                width:300%;
+                background-image:linear-gradient(to right, red, yellow, red, yellow);
+                position:relative;
+                animation-duration:3s;
+                animation-name:colorshift;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            #window{
+                overflow:hidden;
+                height:200px;
+                width:200Px;
+            }
+            /*text animation*/
+            @keyframes shifting{
+                0%{background-position-x:0px;}
+                100%{background-position-x:400px;}
+            }
+            #textshift{
+                background-image:linear-gradient(to right, blue, rgb(0, 251, 0), blue, rgb(0, 251, 0), blue);
+                background-size: 200px;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color:transparent;
+                animation-name: shifting;
+                animation-duration:8s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
         </style>
     </head>
     <body>
@@ -121,12 +159,12 @@
             <p>Look here for quick-links to CSS projects!:
                 <ul>
                     <li>drop-down design!</li>
-                    <li>color gradients</li>
+                    <li>animations</li>
                     <li>making very simple images using divs</li>
                 </ul>
             </p>
             <br><br><br>
-            <div>
+            <div id="dropit">
                 <h2>Making a drop down selection menu for links or other content!</h2>
                 <p>Need something to drop down when necessary? Use this technique!</p>
                 <p>Requirements: a parent and child element. Example below:</p>
@@ -162,6 +200,21 @@
                         <p>#upper and #lower can be substituted for any class or id, as long as there are nested divs. </p>
                     </p>
                 </p>
+            </div>
+            <div>
+                <h2>Making cool animations!</h2>
+                <p>Next level skills required, and some good planning!<br>
+                Requires use of @keyframes
+                </p>
+                <p>making a moving gradient!<br>example:</p>
+                <div id="window">
+                    <div id="strip">
+                    </div>
+                </div>
+                <p id='textshift'>Hello There fellow humans, what a wonderful midsummer morning<br>Oh woe is me, forsooth</p>
+                <p>But first a word from this sections sponsor, @keyframes.</p>
+                <h4>How to use @keyframes</h4>
+
             </div>
         </main>
     </body>

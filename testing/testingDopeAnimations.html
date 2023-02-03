@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>animation testing</title>
+        <style>
+            
+            @keyframes colorshift{
+                0%{right:0%;}
+                100%{right:200%;}
+                
+            }
+            #strip{
+                height:200px;
+                width:300%;
+                background-image:linear-gradient(to right, red, yellow, red, yellow);
+                position:relative;
+                animation-duration:3s;
+                animation-name:colorshift;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            #window{
+                overflow:hidden;
+                height:200px;
+                width:200Px;
+            }
+            @keyframes shifting{
+                0%{background-position-x:0px;}
+                100%{background-position-x:400px;}
+            }
+            #textshift{
+                background-image:linear-gradient(to right, blue, rgb(0, 251, 0), blue, rgb(0, 251, 0), blue);
+                background-size: 200px;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color:transparent;
+                animation-name: shifting;
+                animation-duration:8s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="window">
+            <div id="strip">
+            </div>
+        </div>
+        <p id='textshift'>Hello There fellow humans, what a wonderful midsummer morning<br>Oh woe is me, forsooth</p>
+    </body>
+
+</html>
